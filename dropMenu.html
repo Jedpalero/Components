@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--script needed for tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <title>Tailwind DropMenu</title>
+  </head>
+  <body class="font-[Poppins]">
+    <section
+      class="nav-link fixed top-[-100%] right-12 min-h-[30vh] bg-gray-200 w-60 px-5"
+    >
+      <ul class="list-none mt-2 text-center">
+        <li
+          class="py-2 px-3 block hover:bg-[#2E2D2D] rounded-sm hover:text-white mb-4"
+        >
+          One
+        </li>
+        <li
+          class="py-2 px-3 block hover:bg-[#2E2D2D] rounded-sm hover:text-white mb-4"
+        >
+          Two
+        </li>
+        <li
+          class="py-2 px-3 block hover:bg-[#2E2D2D] rounded-sm hover:text-white mb-4"
+        >
+          Three
+        </li>
+        <li
+          class="py-2 px-3 block hover:bg-[#2E2D2D] rounded-sm hover:text-white mb-4"
+        >
+          Four
+        </li>
+      </ul>
+    </section>
+    <ion-icon
+      onclick="onToggle(this)"
+      name="menu"
+      class="text-3xl cursor-pointer absolute top-12 right-1 px-5"
+    ></ion-icon>
+
+    <div
+      class="zIndex:9999 xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh] fixed"
+    >
+      <div class="flex flex-col justify-center space-y-4">
+        <ion-icon name="home" class="text-2xl"></ion-icon>
+      </div>
+    </div>
+
+    <script>
+      const navLinks = document.querySelector(".nav-links");
+      const onToggleMenu = (e) => {
+        navLinks.classList.toggle("top-14");
+      };
+
+      const navLink = document.querySelector(".nav-link");
+      const onToggle = (e) => {
+        e.name = e.name === "menu" ? "close" : "menu";
+        navLink.classList.toggle("top-16");
+      };
+    </script>
+  </body>
+</html>
